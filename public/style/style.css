@@ -1,0 +1,171 @@
+
+body {
+  background-size:cover;
+  margin: 0px;
+   font-family: 'Josefin Sans', sans-serif;
+   font-size:20px;
+
+}
+
+h1 {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 100px;
+  /*text-shadow: 3px 3px black;*/
+  text-align: center;
+  color: #FFAF26;
+}
+span {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+  bold:true;
+  color:black;
+  margin: 0px;
+  display: inline;
+
+}
+h3{
+  font-family:'Tangerine', lato;
+  font-size: 60px;
+  font-weight: bold;
+  color:black;
+  margin: 0px;
+}
+h4 {
+  font-family: Lobster, Monospace;
+  font-size: 30px;
+  outline-style: inherit;
+  outline-color: black;
+  outline-width: 100px;
+  text-shadow: 3px 3px black;
+  margin: 0px;
+}
+
+
+
+
+.blue-box{
+  background-color:primary;
+  padding: 20px;
+}
+.marg{
+  margin: 20px;
+  margin-top:500px;
+
+}
+.margTitle2{
+  margin-top:65px;
+
+}
+.pushRight{
+
+}
+
+.important_text {
+  outline-style: inherit;
+  outline-color: black;
+  outline-width: 100px;
+  text-shadow: 3px 3px black;
+  margin: 0px;
+}
+
+
+.glow span {
+  //color: #29ADBA;
+  color: white;
+
+}
+
+.glow span:hover {
+  color: #FFAF26;
+
+}
+
+
+
+
+
+ul{
+  font-size: 30px;
+  font-family: "Quicksand" ;
+  color: black;
+  font-weight: bold;
+}
+h5{
+
+  font-family: Lobster, Monospace;
+  font-size: 40px;
+  color: black;
+  margin: 0px;
+}
+
+.header-cont {
+  width:100%;
+  position:fixed;
+  top:0px;
+  background-color: #0088cc;
+
+  height: 70px;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+}
+.bodyPart1 {
+  width:100%;
+  top:0px;
+  background-color: #3399FF;
+
+  height: 500px;
+  left: 0px;
+  top: 0px;
+
+}
+a {
+  text-decoration: none !important;
+  margin: 0px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 200px ;
+    height:100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 20px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Amatic SC',bold;
+}
+
+.button1 {
+background-color: #4CAF50;
+    color: white;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+
+}
+.button1:hover {
+
+
+     background-color: white;
+    color: black;
+     border-radius: 10px;
+
+}
+
+.button2 {
+ border: 2px solid #008CBA;
+    background-color: #008CBA;
+    color: white;
+    border-radius: 10px;
+}
+
+.button2:hover {
+ background-color: white;
+    color: black;
+    border-radius: 10px;
+
+}
