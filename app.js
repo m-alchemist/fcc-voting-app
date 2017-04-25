@@ -1,23 +1,34 @@
 var express=require('express');
 
 var path=require('path');
-const LoginWithTwitter = require('login-with-twitter')
+const passport = require('passport');
 
-const tw = new LoginWithTwitter({
-  consumerKey: 'unjlXpB0w32UNwQW7XRA43cW3',
-  consumerSecret: 'OjCqm9GSl83hMzlJLuVBtW5YIDFwpucXe1xgApaSz73pdNPZGz',
-  callbackUrl: 'https://malchemist-voting-app.herokuapp.com/twitter/callback'
-})
+const TwitterStrategy = require('passport-twitter');
+  passport.use(new TwitterStrategy({
+    consumerKey: 'unjlXpB0w32UNwQW7XRA43cW3',
+    consumerSecret: 'OjCqm9GSl83hMzlJLuVBtW5YIDFwpucXe1xgApaSz73pdNPZGz',
+    callbackURL: "https://malchemist-voting-app.herokuapp.com"
+  },
+  function(token, tokenSecret, profile, cb) {
+    User.findOrCreate({ twitterId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
 var app=module.exports=express();
 
 var port = process.env.PORT || 3000;
 
-app.get('/twitter', function (req, res) {
+app.get('/auth/twitter',
+  passport.authenticate('twitter'));
 
-})
-app.get('/twitter/callback', function (req, res) {
-res.send('hello worlds');
-})
+app.get('/auth/twitter/callback',
+  passport.authenticate('twitter', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+    $('loginName').innerHTML(req.profile.id);
+  });
 app.use(express.static(__dirname +'/public'));
 // app.use(express.static(path.join(__dirname, 'style')));
 
