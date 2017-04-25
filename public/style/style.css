@@ -17,9 +17,9 @@ h1 {
 span {
   font-family: 'Permanent Marker', cursive;
   font-size: 40px;
-  bold:true;
+
   color:black;
-  margin: 0px;
+  margin-top: 10px;
   display: inline;
 
 }
@@ -151,7 +151,7 @@ background-color: #4CAF50;
 
 
      background-color: white;
-    color: black;
+    color: #FFAF26;
      border-radius: 10px;
 
 }
@@ -165,7 +165,7 @@ background-color: #4CAF50;
 
 .button2:hover {
  background-color: white;
-    color: black;
+  color: #FFAF26;
     border-radius: 10px;
 
 }
