@@ -1,6 +1,10 @@
 {
   "name": "node-authentication",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "bcrypt-nodejs": "latest",
     "connect-flash": "~0.1.1",
