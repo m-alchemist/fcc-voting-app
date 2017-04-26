@@ -1,10 +1,12 @@
+<!-- views/index.ejs -->
+
 <!doctype html>
 
 <html>
 <head>
   <title>Voting App</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type='css/text' rel="stylesheet">
-  <link href="/style/style.css" type="text/css" rel="stylesheet" >
+  <link href="style.css" type="text/css" rel="stylesheet" >
 
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
@@ -15,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
-
+link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', ref='stylesheet')
 </head>
 
 <div class="header-cont header ">
@@ -34,14 +36,24 @@
         </a>
 
 
-        <a href='/auth/twitter'>
+
 
           <div class="glow" style='float:right; margin-right: 40px;' >
-            <span id='loginName' >
-   Login
- </span>
+            <div id='loginName' >
+
+						<% if (user) { %>
+							<a href='/profile'><span>
+								<%= user.twitter.displayName %>
+							</span></a>
+						<% }
+						else{ %>
+							<a href='/auth/twitter'><span> login </span></a>
+						<% } %>
+
+
+ </div>
           </div>
-        </a>
+
 
 
 
@@ -66,8 +78,12 @@
 <p class='text-center text-danger' style='margin-top: 20px;'>
    by m-alchemist
   </p>
+
+<script>
+
+
+</script>
 </body>
 
-<script src='app.js'/>
 
 </html>

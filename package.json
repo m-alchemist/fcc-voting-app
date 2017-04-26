@@ -1,22 +1,16 @@
 {
-  "name": "voting-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "node-authentication",
+  "main": "server.js",
   "dependencies": {
-    "bell": "^8.6.0",
-    "boom": "^4.3.1",
-    "express": "^4.15.2",
-    "hapi": "^16.1.1",
-    "hapi-auth-cookie": "^7.0.0",
-    "login-with-twitter": "^1.0.1",
-    "passport": "^0.3.2",
-    "zombie-passport-twitter": "0.0.3"
+    "bcrypt-nodejs": "latest",
+    "connect-flash": "~0.1.1",
+    "ejs": "~0.8.5",
+    "express": "^3.4.8",
+    "mongoose": "^3.8.40",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-google-oauth": "~0.1.5",
+    "passport-local": "~0.1.6",
+    "passport-twitter": "~1.0.2"
   }
 }
