@@ -1,20 +1,32 @@
 {
-  "name": "node-authentication",
+  "name": "voting-app",
+  "version": "1.0.0",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-alchemist/fcc-voting-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-alchemist/fcc-voting-app/issues"
+  },
+  "homepage": "https://github.com/m-alchemist/fcc-voting-app#readme",
   "dependencies": {
     "bcrypt-nodejs": "latest",
+    "body-parser": "^1.17.1",
     "connect-flash": "~0.1.1",
     "ejs": "~0.8.5",
-    "express": "^3.4.8",
-    "mongoose": "^3.8.40",
-    "passport": "~0.1.17",
-    "passport-facebook": "~1.0.2",
-    "passport-google-oauth": "~0.1.5",
-    "passport-local": "~0.1.6",
-    "passport-twitter": "~1.0.2"
+    "express": "^3.21.2",
+    "express-logger": "0.0.3",
+    "mongoose": "^4.9.6",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4"
   }
 }
