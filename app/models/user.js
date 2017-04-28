@@ -2,43 +2,30 @@
 // load the things we need
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-
+const Schema= mongoose.Schema;
 // define the schema for our user model
-var userSchema = mongoose.Schema({
+var UserSchema = mongoose.Schema({
+    name: String,
 
-    local            : {
-        email        : String,
-        password     : String,
-    },
-    facebook         : {
-        id           : String,
-        token        : String,
-        email        : String,
-        name         : String
-    },
     twitter          : {
         id           : String,
         token        : String,
         displayName  : String,
         username     : String
     },
-    google           : {
-        id           : String,
-        token        : String,
-        email        : String,
-        name         : String
-    }
+    polls: [{type: Schema.Types.ObjectId, ref:'poll'}]
+
 
 });
 
 // checking if password is valid using bcrypt
-userSchema.methods.validPassword = function(password) {
+UserSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
 };
 
 
 // this method hashes the password and sets the users password
-userSchema.methods.hashPassword = function(password) {
+UserSchema.methods.hashPassword = function(password) {
     var user = this;
 
     // hash the password
@@ -51,5 +38,12 @@ userSchema.methods.hashPassword = function(password) {
 
 };
 
-// create the model for users and expose it to our app
-module.exports = mongoose.model('User', userSchema);
+UserSchema.pre('remove', function(next){
+  const Poll=mongoose.model('poll');
+  Poll.remove({_id: {$in: this.polls}})
+  .then(()=>next());
+
+})
+
+const User=mongoose.model('user', UserSchema);
+module.exports=User
