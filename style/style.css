@@ -9,14 +9,14 @@ body {
 
 h1 {
   font-family: 'Architects Daughter', cursive;
-  font-size: 100px;
+  font-size: 70px;
   /*text-shadow: 3px 3px black;*/
   text-align: center;
   color: #FFAF26;
 }
 span {
   font-family: 'Permanent Marker', cursive;
-  font-size: 40px;
+  font-size: 20px;
 
   color:black;
   margin-top: 10px;
@@ -25,14 +25,14 @@ span {
 }
 h3{
   font-family:'Tangerine', lato;
-  font-size: 60px;
+  font-size: 30px;
   font-weight: bold;
   color:black;
   margin: 0px;
 }
 h4 {
   font-family: Lobster, Monospace;
-  font-size: 30px;
+  font-size: 15px;
   outline-style: inherit;
   outline-color: black;
   outline-width: 100px;
@@ -103,18 +103,17 @@ h5{
   position:fixed;
   top:0px;
   background-color: #0088cc;
-
-  height: 70px;
+  height: 50px;
   left: 0px;
   top: 0px;
   z-index: 10;
+  padding: 10px;
 }
 .bodyPart1 {
   width:100%;
   top:0px;
   background-color: #3399FF;
-
-  height: 500px;
+  height: 350px;
   left: 0px;
   top: 0px;
 
@@ -127,12 +126,12 @@ a {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    width: 200px ;
-    height:100px;
+    width: 150px ;
+    height:75px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 40px;
+    font-size: 30px;
     margin: 20px 10px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
