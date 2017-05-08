@@ -15,91 +15,91 @@
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <div class="header-cont header ">
 
-    <div class="row">
-      <div style='display:inline;'>
+  <div class="row">
+    <div style='display:inline;'>
 
 
-                  <div class="glow" style='float:right; margin-right: 40px;'>
-                    <% if (user) { %>
-                      <a href='/profile'>
-                      <span style='font-size:20px;'>
-                    			<%= user.twitter.displayName %>
-                    		</span>
-                          </a>
-                    <% }
-                    else{%>
-                    <a href='/auth/twitter'>  <span> Login </span></a>
-                    <%}%>
-                    <a href='/'>
-                    <span >
-           Home
-         </span >
+      <div class="glow" style='float:right; margin-right: 40px;'>
+        <% if (user) { %>
+          <a href='/profile'>
+            <span style='font-size:20px;'>
+              <%= user.twitter.displayName %>
+            </span>
           </a>
+          <% }
+          else{%>
+            <a href='/auth/twitter'>  <span> Login </span></a>
+            <%}%>
+            <a href='/'>
+              <span >
+                Home
+              </span >
+            </a>
 
-                  </div>
-
-
- </div>
           </div>
 
 
+        </div>
+      </div>
+
+
 
 
     </div>
 
-    </div>
+  </div>
 
 </div>
 
 
 
-  <div class='bodyPart1' style='padding-top: 150px;'>
+<div class='bodyPart1' style='padding-top: 150px;'>
   <h1 class='  '>
-     Voting App
+    Voting App
   </h1>
 </div>
 <div class='text-center'>
 
-  						<% if (!user) { %>
-  							<a href='/auth/twitter'> <button href='/auth/twitter'
-                    class='button button1'>
-                     LOGIN
-                   </button></a>
-  						<% }
-              else{ %>
-              <a href='/profile'><button href='/profile'
-                  class='button button1'> PROFILE
-                </button></a>
-  						<% }
-  						%>
+  <% if (!user) { %>
+    <a href='/auth/twitter'> <button href='/auth/twitter'
+      class='button button1'>
+      LOGIN
+    </button></a>
+    <% }
+    else{ %>
+      <a href='/profile'><button href='/profile'
+        class='button button1'> PROFILE
+      </button></a>
+      <% }
+      %>
 
-<a href='/latestPolls'><button href='/' class="button button2">LATEST POLLS</button></a>
-</div>
+      <a href='/latestPolls'><button href='/' class="button button2">LATEST POLLS</button></a>
+    </div>
 
-<p class='text-center text-danger' style='margin-top: 20px;'>
-   by m-alchemist
-  </p>
-  <div class='glow2 text-center' style="margin:10px;font-size:30px;">
-    <a href='https://www.linkedin.com/in/mohamed-al-khamees-182244b0/'><i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px;"></i></a>
-    <a href='https://twitter.com/moalkhamees'><i class="fa fa-twitter" ></i></a>
-    <a href='https://github.com/m-alchemist'><i class="fa fa-github"></i></a>
-  <a ='https://www.facebook.com/profile.php?id=100012580410738'>  <i class="fa fa-facebook-f"></i></a>
-  </div>
+    <p class='text-center text-danger' style='margin-top: 20px;'>
+      by m-alchemist
+    </p>
+    <div class='glow2 text-center' style="margin:10px;font-size:30px;">
+      <a href='https://www.linkedin.com/in/mohamed-al-khamees-182244b0/'><i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px;"></i></a>
+      <a href='https://twitter.com/moalkhamees'><i class="fa fa-twitter" ></i></a>
+      <a href='https://github.com/m-alchemist'><i class="fa fa-github"></i></a>
+      <a ='https://www.facebook.com/profile.php?id=100012580410738'>  <i class="fa fa-facebook-f"></i></a>
+    </div>
 
-<script>
-
-
-</script>
-</body>
+    <script>
 
 
-</html>
+    </script>
+  </body>
+
+
+  </html>

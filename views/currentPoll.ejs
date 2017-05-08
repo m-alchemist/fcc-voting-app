@@ -114,45 +114,45 @@
       <div class='bodyPart2' >
         <h2 id='pollTitle' class='text-danger text-center'>   <%= Poll.title %></h2>
         <div class='text-right' style=' margin-right: 100px;' >
-        <a  style='width:500px 'href="https://twitter.com/share" data-size='large' class="twitter-share-button" data-text="Voting App: <%= Poll.title %>. Vote here: "
-           data-show-count="false">
-           Tweet</a>
-           <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div class='text-center'>
+          <a  style='width:500px 'href="https://twitter.com/share" data-size='large' class="twitter-share-button" data-text="Voting App: <%= Poll.title %>. Vote here: "
+            data-show-count="false">
+            Tweet</a>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class='text-center'>
 
 
 
-          <div class='row'>
-            <div class='col-xs-4 text-right'>
-              <div class="button-container"  style='margin-top:80px; '>
-                <%for(var i=0;i<Poll.options.length;i++){%>
-                  <form action="/updateVote/<%=Poll.options[i]._id%>/<%=Poll._id%>" type='post'>
-                    <button name='optionId' value='Poll.options[i]._id'class="button button1">
-                      <%= Poll.options[i].content %>
-                    </button>
+            <div class='row'>
+              <div class='col-xs-5 text-right'>
+                <div class="button-container"  style='margin-top:80px; '>
+                  <%for(var i=0;i<Poll.options.length;i++){%>
+                    <form action="/updateVote/<%=Poll.options[i]._id%>/<%=Poll._id%>" type='post'>
+                      <button name='optionId' value='Poll.options[i]._id'class="button button1">
+                        <%= Poll.options[i].content %>
+                      </button>
 
-                  </form>
-                  <%}%>
-                  <button id='newOption' class="button button2" onClick= <%=clickHandler %> >
-                    New Option</button>
-
-                    <div id='input1'  class='text-center'>
-                      <form action='/newOption/' method='get' >
-                        <div class='input2' >
-                        <input  class='input2' id=<%=Poll._id%>  type="text" name="ExtraOption"  placeholder="option..">
-                      </div>
-                      </br>
-
-                      <input   type='hidden' name='id' value=<%=Poll._id%> >
-
-                      <input class='submitButton button1' type="submit"  value="Submit">
                     </form>
+                    <%}%>
+                    <button id='newOption' class="button button2" onClick= <%=clickHandler %> >
+                      New Option</button>
+
+                      <div id='input1'  class='text-center'>
+                        <form action='/newOption/' method='get' >
+                          <div class='input2' >
+                            <input  class='input2' id=<%=Poll._id%>  type="text" name="ExtraOption"  placeholder="option..">
+                          </div>
+                        </br>
+
+                        <input   type='hidden' name='id' value=<%=Poll._id%> >
+
+                        <input class='submitButton button1' type="submit"  value="Submit">
+                      </form>
+                    </div>
                   </div>
+
+
                 </div>
-
-
-              </div>
 
                 <div class='col-xs-4' >
                   <div id="donutchart" class='text-left' style=" width: 800px; height: 500px;"></div>
@@ -160,51 +160,51 @@
 
                 </div>
 
+              </div>
+
+
+
+              <%if (owner){%>
+                <form action='/delete/<%= Poll._id %>' type='get'>
+                  <button  class="buttonShape2 button3 text-center">Delete</button>
+                </form>
+                <%}%>
+              </div>
             </div>
 
 
 
-            <%if (owner){%>
-              <form action='/delete/<%= Poll._id %>' type='get'>
-                <button  class="buttonShape2 button3 text-center">Delete</button>
-              </form>
-              <%}%>
+            <p class='text-center text-danger' style='margin-top: 20px;'>
+              by m-alchemist
+            </p>
+
+            <div class='glow2 text-center' style="margin:10px;font-size:30px;">
+              <a href='https://www.linkedin.com/in/mohamed-al-khamees-182244b0/'><i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px;"></i></a>
+              <a href='https://twitter.com/moalkhamees'><i class="fa fa-twitter" ></i></a>
+              <a href='https://github.com/m-alchemist'><i class="fa fa-github"></i></a>
+              <a ='https://www.facebook.com/profile.php?id=100012580410738'>  <i class="fa fa-facebook-f"></i></a>
             </div>
-          </div>
+            <script>
 
+            var x=document.getElementById('input1');
+            x.style.display=='none';
+            document.getElementById('input1')
+            function func1(){
 
-
-          <p class='text-center text-danger' style='margin-top: 20px;'>
-            by m-alchemist
-          </p>
-
-          <div class='glow2 text-center' style="margin:10px;font-size:30px;">
-            <a href='https://www.linkedin.com/in/mohamed-al-khamees-182244b0/'><i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px;"></i></a>
-            <a href='https://twitter.com/moalkhamees'><i class="fa fa-twitter" ></i></a>
-            <a href='https://github.com/m-alchemist'><i class="fa fa-github"></i></a>
-          <a ='https://www.facebook.com/profile.php?id=100012580410738'>  <i class="fa fa-facebook-f"></i></a>
-          </div>
-          <script>
-
-          var x=document.getElementById('input1');
-          x.style.display=='none';
-          document.getElementById('input1')
-          function func1(){
-
-            if(x.style.display=='none'){
-              x.style.display='block'
+              if(x.style.display=='none'){
+                x.style.display='block'
+              }
+              else{
+                x.style.display='none';
+              }
             }
-            else{
-              x.style.display='none';
-            }
-          }
 
-          func1();
+            func1();
 
-          </script>
+            </script>
 
 
-        </body>
+          </body>
 
 
-        </html>
+          </html>

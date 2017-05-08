@@ -6,23 +6,23 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<style>
-		body 		{ padding-top:80px; word-wrap:break-word; }
+	body 		{ padding-top:80px; word-wrap:break-word; }
 	</style>
 </head>
 <body>
-<div class="container">
+	<div class="container">
 
-	<div class="page-header text-center">
-		<h1><span class="fa fa-anchor"></span> Profile Page</h1>
-		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
-	</div>
+		<div class="page-header text-center">
+			<h1><span class="fa fa-anchor"></span> Profile Page</h1>
+			<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+		</div>
 
-	<div class="row">
+		<div class="row">
 
-		<!-- TWITTER INFORMATION -->
-		<div class="col-sm-6">
-			<div class="well">
-				<h3 class="text-info"><span class="fa fa-twitter"></span> Twitter</h3>
+			<!-- TWITTER INFORMATION -->
+			<div class="col-sm-6">
+				<div class="well">
+					<h3 class="text-info"><span class="fa fa-twitter"></span> Twitter</h3>
 
 					<p>
 						<strong>id</strong>: <%= user.twitter.id %><br>
@@ -31,11 +31,11 @@
 						<strong>displayName</strong>: <%= user.twitter.displayName %>
 					</p>
 
+				</div>
 			</div>
+
 		</div>
 
 	</div>
-
-</div>
 </body>
 </html>
