@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/m-alchemist/fcc-voting-app#readme",
   "dependencies": {
+    "async": "^2.4.0",
     "bcrypt-nodejs": "latest",
     "body-parser": "^1.17.1",
+    "chart.js": "^2.5.0",
     "connect-flash": "~0.1.1",
     "ejs": "~0.8.5",
     "express": "^3.21.2",

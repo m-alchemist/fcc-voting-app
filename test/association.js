@@ -7,40 +7,32 @@ const Option=require('../app/models/option');
 
 describe('Associations',()=>{
   beforeEach((done)=>{
-    let joe, poll, option;
-    joe =new User({name: 'joe'});
+    let mo, poll, option;
+    mo =new User({name: 'mo'});
     poll =new Poll({title: 'js is awesome'});
     option1= new Option({content: 'totally'});
     option2= new Option({content: 'nope'});
 
-    joe.polls.push(poll);
+    mo.polls.push(poll);
     poll.options.push(option1);
-    option1.user=joe;
+    option1.user=mo;
     poll.options.push(option2);
-    option2.user=joe;
+    option2.user=mo;
 
 
-    Promise.all([joe.save(),poll.save(),option1.save(),option2.save()])
+    Promise.all([mo.save(),poll.save(),option1.save(),option2.save()])
     .then(()=>done());
   })
 
   it('save a relation between a user and blogPost', (done)=>{
-    User.findOne({name:'joe'})
+    User.findOne({name:'mo'})
     .populate('polls')
     .then((user)=>{
       assert(user.polls[0].title==='js is awesome');
       done();
     })
   })
-  // it('saves a full relation graph', (done)=>{
-  //   User.findOne({name: 'joe'})
-  //   .populate({
-  //     path: 'blogPosts',
-  //     populate:{
-  //       path: 'comments',
-  //       model:'comment',
-  //       populate:{
-  //         path: 'user',
+  //http://127.0.0.1:3000   path: 'user',
   //         model: 'user'
   //       }
   //     }

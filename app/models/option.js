@@ -4,7 +4,7 @@ const Schema=mongoose.Schema;
 
 const OptionSchema=new Schema({
   content: String,
-  votes:Number,
+  votes:{type:Number, default: 0},
   user: {type: Schema.Types.ObjectId, ref: 'user'}
 });
 

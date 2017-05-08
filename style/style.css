@@ -12,11 +12,20 @@ h1 {
   font-size: 80px;
   /*text-shadow: 3px 3px black;*/
   text-align: center;
+
   color: #FFAF26;
 }
-span {
-  font-family: 'Permanent Marker', cursive;
+h2{
+   font-family: 'Josefin Sans', sans-serif;
+  font-size: 40px;
+  /*text-shadow: 3px 3px black;*/
+  text-align: center;
+    color: #FFAF26;
 
+}
+span {
+  /*font-family: 'Permanent Marker', cursive;*/
+font-family: 'Architects Daughter', cursive;
 
   color:black;
   margin-top: 10px;
@@ -119,6 +128,13 @@ h5{
   top: 0px;
 
 }
+.bodyPart2 {
+  width:100%;
+  top:0px;
+  background-color:white;
+
+
+}
 a {
   text-decoration: none !important;
   margin: 0px;
@@ -132,7 +148,8 @@ a {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+    font-size: 150%;
+
     margin: 20px 10px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -167,5 +184,147 @@ background-color: #4CAF50;
  background-color: white;
   color: #FFAF26;
     border-radius: 10px;
+
+}
+.buttonShape2 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 150px ;
+    height:75px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 20px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Amatic SC',bold;
+}
+.button3 {
+    border: 2px solid #ff3232;
+    background-color: #ff3232;
+    color: white;
+    border-radius: 10px;
+}
+
+.button3:hover {
+    background-color: white;
+    color: #ff3232;
+    border-radius: 10px;
+}
+
+.textbox {
+  font-color:  white;
+  background-color:#0088cc ;
+  opacity: .8;
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  padding: 40px;
+  margin:10px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.boxes {
+    border: 2px solid #0088cc;
+    background-color: #0088cc;
+    color: white;
+    border-radius: 3px;
+
+
+}
+
+.boxes:hover {
+    background-color: white;
+    color: #FFAF26;
+    border-radius: 10px;
+}
+
+
+p{
+  font-family: 'Architects Daughter', cursive;
+  margin:0px;
+}
+.button-container form,
+.button-container form div {
+    display: inline;
+}
+
+.button-container button {
+    display: inline;
+    vertical-align: middle;
+}
+.input1 input[type=text] {
+    width: 170px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 40px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.input1 input[type=text]:focus {
+    width: 500px;
+}
+
+.input2 input[type=text] {
+    width: 170px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 40px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.input2 input[type=text]:focus {
+    width: 300px;
+}
+.submitButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 150px ;
+    height:50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 20px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Amatic SC',bold;
+}
+
+.glow2 a{
+  //color: ;
+  color:  #FFAF26;
+
+}
+
+.glow2 a :hover {
+  color:#0088cc;
 
 }

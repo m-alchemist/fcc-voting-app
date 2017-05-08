@@ -1,41 +1,116 @@
-<!-- views/profile.ejs -->
+<!-- views/index.ejs -->
+
 <!doctype html>
+
 <html>
 <head>
-	<title>Node Authentication</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-	<style>
-		body 		{ padding-top:80px; word-wrap:break-word; }
-	</style>
+  <title>Voting App</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type='css/text' rel="stylesheet">
+  <link href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet'>
+  <link href="/style.css" type="text/css" rel="stylesheet" >
+
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-<div class="container">
 
-	<div class="page-header text-center">
-		<h1><span class="fa fa-anchor"></span> Profile Page</h1>
-		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
-	</div>
+<div class="header-cont header ">
 
-	<div class="row">
+    <div class="row">
+      <div style='display:inline;'>
 
-		<!-- TWITTER INFORMATION -->
-		<div class="col-sm-6">
-			<div class="well">
-				<h3 class="text-info"><span class="fa fa-twitter"></span> Twitter</h3>
 
-					<p>
-						<strong>id</strong>: <%= user.twitter.id %><br>
-						<strong>token</strong>: <%= user.twitter.token %><br>
-						<strong>username</strong>: <%= user.twitter.username %><br>
-						<strong>displayName</strong>: <%= user.twitter.displayName %>
-					</p>
 
-			</div>
-		</div>
+                  <div class="glow" style='float:right; margin-right: 40px;'>
+                    <% if (user) { %>
+                      <a href='/profile'>
+                      <span style='font-size:20px;'>
+                    			<%= user.twitter.displayName %>
+                    		</span>
+                          </a>
+                    <% }
+                    else{%>
+                    <a href='/auth/twitter'>  <span> Login </span></a>
+                    <%}%>
+                    <a href='/'>
+                    <span >
+           Home
+         </span >
+          </a>
 
-	</div>
+                  </div>
+
+
+
+
+
+
+    </div>
+
+    </div>
 
 </div>
+
+
+
+  <div class='bodyPart1' style='padding-top: 150px;'>
+		<h1> Voting App </h1>
+	</br>
+</br>
+	<h1 style='font-size: 30px;'> Welcome
+			<%= user.twitter.displayName %>
+		</h1>
+</div>
+<div class='text-center'>
+	<a href='/newPoll'> <button  class="button button1">NEW POLL</button> </a>
+<a href='/latestPolls'><button href='/latesPolls' class="button button2">LATEST POLLS</button></a>
+</br>
+<a href='/logout'> <button  class="buttonShape2 button3 text-center">Logout</button> </a>
+
+</div>
+<div class='text-center' >
+  <h2 class='text-danger'> My Polls </h2>
+<div class="button-container">
+      <%for(var i=0;i<Poll.length;i++){%>
+        <form action="/currentPoll/<%= Poll[i]._id %>" type='post'>
+    <button class='textbox boxes' name='pollTitle' value='Poll[i].title'>
+
+    <p class='text-center ' style='font-size: 20px; '><%= Poll[i].title %></p>
+
+  </button>
+    </form>
+
+  <%}%>
+</div>
+
+
+
+</div>
+  <div class='text-center'>
+<p class='text-center text-danger' style='margin-top: 20px;'>
+   by m-alchemist
+  </p>
+</br>
+<div class='glow2' style="margin:10px;font-size:30px;">
+  <a href='https://www.linkedin.com/in/mohamed-al-khamees-182244b0/'><i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px;"></i></a>
+  <a href='https://twitter.com/moalkhamees'><i class="fa fa-twitter" ></i></a>
+  <a href='https://github.com/m-alchemist'><i class="fa fa-github"></i></a>
+<a ='https://www.facebook.com/profile.php?id=100012580410738'>  <i class="fa fa-facebook-f"></i></a>
+</div>
+</div>
+
+<script>
+
+
+</script>
 </body>
+
+
 </html>

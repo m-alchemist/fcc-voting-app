@@ -5,7 +5,11 @@ const Schema=mongoose.Schema;
 const PollSchema=new Schema({
   title: String,
   options:[{type: Schema.Types.ObjectId,
-  ref: 'option'}]
+  ref: 'option'}],
+  date:{type: Date },
+    user: {type: Schema.Types.ObjectId, ref: 'user'},
+    userId:  String
+
 
 
 });

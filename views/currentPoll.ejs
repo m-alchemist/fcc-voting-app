@@ -1,0 +1,210 @@
+<!-- views/index.ejs -->
+
+<!doctype html>
+
+<html>
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type='css/text' rel="stylesheet">
+  <link href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet'>
+  <link href="/style.css" type="text/css" rel="stylesheet" >
+
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type="text/javascript">
+
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+
+  var pollTitle=<%- JSON.stringify(Poll.title) %>
+  var array=<%- JSON.stringify(
+    Poll.options.map((option)=>{
+      var arr=[];
+
+
+      arr.push(option.content);
+      arr.push(option.votes);
+      return arr;
+    })
+
+  ) %>
+  array.unshift(['choice','votes']);
+  console.log(array);
+
+
+  function drawChart() {
+    console.log(array);
+    var data = google.visualization.arrayToDataTable(array);
+
+    var options = {
+      title:  pollTitle,
+      pieHole: 0.4,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+  </script>
+</head>
+<body>
+
+
+  <div class="header-cont header ">
+
+    <div class="row">
+      <div style='display:inline;'>
+
+
+
+        <div class="glow" style='float:right; margin-right: 40px;'>
+          <% if (user) { %>
+            <a href='/profile'>
+              <span style='font-size:20px;'>
+                <%= user.twitter.displayName %>
+              </span>
+            </a>
+            <% }
+            else{%>
+              <a href='/auth/twitter'>  <span> Login </span></a>
+              <%}%>
+              <a href='/'>
+                <span >
+                  Home
+                </span >
+              </a>
+
+            </div>
+
+
+
+            <div class="glow" style='float:right; margin-right: 40px;' >
+              <div id='loginName' >
+
+
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class='bodyPart1' style='padding-top: 150px;'>
+        <h1 class='  '>
+          Voting App
+        </h1>
+      </div>
+      <div class='bodyPart2' >
+        <h2 id='pollTitle' class='text-danger text-center'>   <%= Poll.title %></h2>
+        <div class='text-right' style=' margin-right: 100px;' >
+        <a  style='width:500px 'href="https://twitter.com/share" data-size='large' class="twitter-share-button" data-text="Voting App: <%= Poll.title %>. Vote here: "
+           data-show-count="false">
+           Tweet</a>
+           <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class='text-center'>
+
+
+
+          <div class='row'>
+            <div class='col-md-4 text-right'>
+              <div class="button-container"  style='margin-top:80px; '>
+                <%for(var i=0;i<Poll.options.length;i++){%>
+                  <form action="/updateVote/<%=Poll.options[i]._id%>/<%=Poll._id%>" type='post'>
+                    <button name='optionId' value='Poll.options[i]._id'class="button button1">
+                      <%= Poll.options[i].content %>
+                    </button>
+
+                  </form>
+                  <%}%>
+                  <button id='newOption' class="button button2" onClick= <%=clickHandler %> >
+                    New Option</button>
+
+                    <div id='input1'  class='text-center'>
+                      <form action='/newOption/' method='get' >
+                        <div class='input2' >
+                        <input  class='input2' id=<%=Poll._id%>  type="text" name="ExtraOption"  placeholder="option..">
+                      </div>
+                      </br>
+
+                      <input   type='hidden' name='id' value=<%=Poll._id%> >
+
+                      <input class='submitButton button1' type="submit"  value="Submit">
+                    </form>
+                  </div>
+                </div>
+
+
+              </div>
+
+                <div class='col-md-1' style=' margin-right:300px;'>
+                  <div id="donutchart" class='text-left' style=" width: 800px; height: 500px;"></div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <%if (owner){%>
+              <form action='/delete/<%= Poll._id %>' type='get'>
+                <button  class="buttonShape2 button3 text-center">Delete</button>
+              </form>
+              <%}%>
+            </div>
+          </div>
+
+
+
+          <p class='text-center text-danger' style='margin-top: 20px;'>
+            by m-alchemist
+          </p>
+
+          <div class='glow2 text-center' style="margin:10px;font-size:30px;">
+            <a href='https://www.linkedin.com/in/mohamed-al-khamees-182244b0/'><i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px;"></i></a>
+            <a href='https://twitter.com/moalkhamees'><i class="fa fa-twitter" ></i></a>
+            <a href='https://github.com/m-alchemist'><i class="fa fa-github"></i></a>
+          <a ='https://www.facebook.com/profile.php?id=100012580410738'>  <i class="fa fa-facebook-f"></i></a>
+          </div>
+          <script>
+
+          var x=document.getElementById('input1');
+          x.style.display=='none';
+          document.getElementById('input1')
+          function func1(){
+
+            if(x.style.display=='none'){
+              x.style.display='block'
+            }
+            else{
+              x.style.display='none';
+            }
+          }
+
+          func1();
+
+          </script>
+
+
+        </body>
+
+
+        </html>

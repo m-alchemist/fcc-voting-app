@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -28,28 +29,32 @@
       <div style='display:inline;'>
 
 
-                  <div class="glow" style='float:right; margin-right: 40px;'>
-                    <% if (user) { %>
-                      <a href='/profile'>
-                      <span style='font-size:20px;'>
-                    			<%= user.twitter.displayName %>
-                    		</span>
-                          </a>
-                    <% }
-                    else{%>
-                    <a href='/auth/twitter'>  <span> Login </span></a>
-                    <%}%>
-                    <a href='/'>
-                    <span >
-           Home
-         </span >
-          </a>
-
-                  </div>
 
 
- </div>
+          <div class="glow" style='float:right; margin-right: 40px;'>
+            <% if (user) { %>
+              <a href='/profile'>
+              <span style='font-size:20px;'>
+            			<%= user.twitter.displayName %>
+            		</span>
+                  </a>
+            <% }
+            else{%>
+            <a href='/auth/twitter'>  <span> Login </span></a>
+            <%}%>
+            <a href='/'>
+            <span >
+   Home
+ </span >
+  </a>
+
           </div>
+
+
+
+
+
+
 
 
 
@@ -63,29 +68,32 @@
 
 
   <div class='bodyPart1' style='padding-top: 150px;'>
-  <h1 class='  '>
-     Voting App
-  </h1>
+		<h1> Voting App </h1>
+	</br>
+</br>
+
+
 </div>
-<div class='text-center'>
+<div class='bodyPart2' style=''>
+  <div class='text-center' >
+<div class="button-container">
+        <%for(var i=0;i<Poll.length;i++){%>
+          <form action="/currentPoll/<%= Poll[i]._id %>" type='post'>
+      <button class='textbox boxes' name='pollTitle' value='Poll[i].title'>
 
-  						<% if (!user) { %>
-  							<a href='/auth/twitter'> <button href='/auth/twitter'
-                    class='button button1'>
-                     LOGIN
-                   </button></a>
-  						<% }
-              else{ %>
-              <a href='/profile'><button href='/profile'
-                  class='button button1'> PROFILE
-                </button></a>
-  						<% }
-  						%>
+      <p class='text-center ' style='font-size: 20px; '><%= Poll[i].title %></p>
 
-<a href='/latestPolls'><button href='/' class="button button2">LATEST POLLS</button></a>
+    </button>
+      </form>
+
+    <%}%>
+  </div>
+
+
+
 </div>
 
-<p class='text-center text-danger' style='margin-top: 20px;'>
+<p class='text-center text-danger' style='font-size:15px; margin-top: 20px;'>
    by m-alchemist
   </p>
   <div class='glow2 text-center' style="margin:10px;font-size:30px;">

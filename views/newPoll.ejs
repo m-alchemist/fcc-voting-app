@@ -1,0 +1,141 @@
+<!-- views/index.ejs -->
+
+<!doctype html>
+
+<html>
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type='css/text' rel="stylesheet">
+  <link href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet'>
+  <link href="/style.css" type="text/css" rel="stylesheet" >
+
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+  <div class="header-cont header ">
+
+    <div class="row">
+      <div style='display:inline;'>
+
+
+
+        <div class="glow" style='float:right; margin-right: 40px;'>
+          <% if (user) { %>
+            <a href='/profile'>
+              <span style='font-size:20px;'>
+                <%= user.twitter.displayName %>
+              </span>
+            </a>
+            <% }
+            else{%>
+              <a href='/auth/twitter'>  <span> Login </span></a>
+              <%}%>
+              <a href='/'>
+                <span >
+                  Home
+                </span >
+              </a>
+
+            </div>
+
+
+
+
+            <div class="glow" style='float:right; margin-right: 40px;' >
+              <div id='loginName' >
+
+
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class='bodyPart1' style='padding-top: 150px;'>
+        <h1 class='  '>
+          Voting App
+        </h1>
+      </div>
+      <div class='bodyPart2' >
+
+        <div class='text-center'>
+
+
+
+          <div class="button-container">
+
+            <div  >
+              <form action='/pollCreation/' method='get' >
+              </br>
+                <h2 style='font-size:30px'> Title </h2>
+              <div class='input2'>
+                <input onkeyup='func1()' id='title' type="text" name="Title"  placeholder="Title..">
+              </div>
+            </br>
+          </br></br>
+            <h2 class='text-primary' style='font-size:30px'> Options </h2>
+          <div class='input1'>
+            <input  onkeyup='func1()'  id='options' type="text" name="Options"  placeholder="options..seperate with commas ie (pizza,burger,pie)">
+          </div>
+        </br>
+        <input  id='mySubmit' class='submitButton button1' type="submit"  value="Submit" >
+      </form>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<p class='text-center text-danger' style='margin-top: 20px;'>
+  by m-alchemist
+</p>
+
+<div class='glow2 text-center' style="margin:10px;font-size:30px;">
+  <a href='https://www.linkedin.com/in/mohamed-al-khamees-182244b0/'><i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px;"></i></a>
+  <a href='https://twitter.com/moalkhamees'><i class="fa fa-twitter" ></i></a>
+  <a href='https://github.com/m-alchemist'><i class="fa fa-github"></i></a>
+<a ='https://www.facebook.com/profile.php?id=100012580410738'>  <i class="fa fa-facebook-f"></i></a>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script >
+
+function func1(){
+  var title=document.getElementById("title").value;
+  var options=document.getElementById("options").value
+  console.log(title);
+  console.log(options);
+
+  if(title && options){
+    document.getElementById("mySubmit").disabled=false;
+  }
+  else{
+      document.getElementById("mySubmit").disabled=true;
+  }
+
+}
+</script>
+</body>
+
+
+</html>
