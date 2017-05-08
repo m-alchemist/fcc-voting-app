@@ -140,13 +140,13 @@
                       <div id='input1'  class='text-center'>
                         <form action='/newOption/' method='get' >
                           <div class='input2' >
-                            <input  class='input2' id=<%=Poll._id%>  type="text" name="ExtraOption"  placeholder="option..">
+                            <input onkeyup='func2()' class='input2' id='option' type="text" name="ExtraOption"  placeholder="option..">
                           </div>
                         </br>
 
-                        <input   type='hidden' name='id' value=<%=Poll._id%> >
+                        <input  type='hidden' name='id' value=<%=Poll._id%> >
 
-                        <input class='submitButton button1' type="submit"  value="Submit">
+                          <input  id='mySubmit' class='submitButton button5' type="submit"  value="Submit" disabled='disabled' >
                       </form>
                     </div>
                   </div>
@@ -200,6 +200,21 @@
             }
 
             func1();
+
+            function func2(){
+
+              var options=document.getElementById("option").value
+
+              console.log(option);
+
+              if( options){
+                document.getElementById("mySubmit").disabled=false;
+              }
+              else{
+                document.getElementById("mySubmit").disabled=true;
+              }
+
+            }
 
             </script>
 
